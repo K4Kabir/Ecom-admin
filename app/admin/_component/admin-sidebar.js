@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import { AdminSideBarData } from "@/data/admin-sidebar-data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, LogOut } from "lucide-react";
 
 const AdminSidebar = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -41,6 +41,12 @@ const AdminSidebar = () => {
               </Link>
             </li>
           ))}
+          <li>
+            <div className="flex items-center p-4 hover:bg-gray-700">
+              <LogOut size={24} />
+              {!isCollapsed && <span className="ml-4">Logout</span>}
+            </div>
+          </li>
         </ul>
       </nav>
     </div>
